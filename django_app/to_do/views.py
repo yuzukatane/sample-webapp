@@ -5,7 +5,7 @@ from rest_framework import viewsets, filters
 from .models import Todo
 from .serializer import TodoSerializer
 
-from rest_framework.decorators import api_view
+# from rest_framework.decorators import api_view
 # Create your views here.
 
 class TodoViewSet(viewsets.ModelViewSet):

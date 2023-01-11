@@ -22,6 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(to_do_router.urls)),
 
-	# re_path(r'^admin/', admin.site.urls),
-	# re_path(r'^api/', include(to_do_router.urls)),
 ]

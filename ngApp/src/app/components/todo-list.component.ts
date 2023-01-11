@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params }   from '@angular/router';
 
 import { TodoService } from '../services/todo.service';
@@ -14,9 +14,11 @@ export class TodoListComponent {
 
   constructor(
     private todoService: TodoService,
+	private router: Router,
   ){}
   ngOnInit(): void {
     this.todoService.getAllTodo()
-      .then(todos => this.todos = todos);
+      .subscribe((todos: Todo[]) => this.todos = todos);
   }
+
 }
