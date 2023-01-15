@@ -10,11 +10,11 @@ import { Component } from '@angular/core';
     <router-outlet></router-outlet>
     `,
   styles: [
-    '.title { color: #ee6e73;}',
+    '.title { color: #b0c4de;}',
     '.sub-title { font-size: small; }'
   ],
 })
 export class AppComponent {
   title = 'Simple Todo';
-  subtitle = 'Angular + Django Rest Framework'
+  subtitle = 'Angular + Django Rest Framework + PostgreSql'
 }
