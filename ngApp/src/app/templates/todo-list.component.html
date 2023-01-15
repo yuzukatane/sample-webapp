@@ -10,106 +10,18 @@
 			  class="form-control add-todo"
 			  placeholder="add-todo"
 			>
-			<button (click)="save()" class="btn add-btn">Add</button>
+			<button (click)="add()" class="btn add-btn">Add</button>
 		  </div>
 		</div>
 	  </div>
-	  <!-- <div class="newtodo-list row" style="margin-top:10px;">
-		<div *ngFor="let newtodo of newtodos" class="col-sm-8 col-sm-offset-2">
-			<div class="card">
-			  <div class="card-body">
-				<span from="name" class="card-title">{{newtodo.title}}</span>
-			  </div>
-			</div>
-		</div>
-	  </div> -->
 	  <hr>
     <div class="todo-list row">
       <div *ngFor="let todo of todos">
          <div class="card list-todo">
             <div class="card-body">
-              <span from="name" class="card-text">{{todo.title}}</span>
+              <span from="name" class="card-title">{{todo.title}}</span>
 			  <button (click)="delete(todo.id)" type="button" class="btn float-end">done</button>
           </div>
       </div>
     </div>
 </div>
-
-<!-- save,deleteはできてる、ただhtmlに反映されてないっぽい
-クリックした時の挙動を確認したほうがいいかもね
-クリックしたら→hide的な何かをしてるのかも！ -->
-
-
-
-
-<!-- <div class="container">
-    <div class="center">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <input [(ngModel)]="todo.title"
-            id="input_text"
-            type="text"
-            length="140"
-            class="form-control add-todo"
-            placeholder="add-todo"
-            (focusout)="save()"
-          >
-          <button (click)="save()" class="btn btn-success pull-right add-todo">Add</button>
-        </div>
-      </div>
-    </div>
-    <div class="newtodo-list row" style="margin-top:10px;">
-      <div *ngFor="let newtodo of newtodos" class="col-sm-8 col-sm-offset-2">
-        <div>
-          <div class="card">
-            <div class="card-body"> -->
-              <!-- <span *ngIf="!newtodo.isEdit" (click)="newtodo.isEdit=true" from="name">{{newtodo[0].title}}</span> -->
-              <!-- <input *ngIf="newtodo.isEdit"
-                (focusout)="newtodo.isEdit=false || update(newtodo[0].id, newtodo[0].title)"
-                [(ngModel)]="newtodo[0].title"
-                id="input_text"
-                type="text"
-                length="140"
-                style="border:none; width:70%"
-              > -->
-              <!-- <button (click)="delete(newtodo[0].id) || newtodo.hideElement=true"
-                type="button"
-                class="btn btn-success btn-circle pull-right"
-              > -->
-                <!-- <i class="glyphicon glyphicon-ok"></i> -->
-              <!-- </button> -->
-            <!-- </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr class="col-sm-8 col-sm-offset-2">
-    <div class="todo-list row">
-      <div *ngFor="let todo of todos" class="col-sm-8 col-sm-offset-2">
-        <div [style.display]="!todo ? 'inline':'none'">
-          <div class="card">
-            <div class="card-body"> -->
-              <!-- <span *ngIf="!todo.isEdit" (click)="todo.isEdit=true" from="name">{{todo.title}}</span>
-              <input *ngIf="todo.isEdit"
-                (focusout)="todo.isEdit=false || update(todo.id, todo.title)"
-                [(ngModel)]="todo.title"
-                id="input_text"
-                type="text"
-                length="140"
-                style="border:none; width:70%"
-              > -->
-              <!-- <button (click)="delete(todo.id)"
-                type="button"
-                class="btn btn-success
-                btn-circle pull-right"
-              >
-                <i class="glyphicon glyphicon-ok"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-</div> -->
-
-

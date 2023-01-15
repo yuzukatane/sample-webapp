@@ -1,5 +1,5 @@
-import { Component,Input, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params, ResolveEnd }   from '@angular/router';
+import { Component,Input } from '@angular/core';
+import { Router}   from '@angular/router';
 
 import { TodoService } from '../services/todo.service';
 import { Todo } from '../models/todo.model';
@@ -11,7 +11,6 @@ import { Todo } from '../models/todo.model';
 })
 export class TodoListComponent {
   todos: Todo[] = [];
-//   newtodos: Todo[] = [];
   @Input() todo: Todo = new Todo();
 
   constructor(
@@ -22,30 +21,18 @@ export class TodoListComponent {
     this.todoService.getAllTodo()
       .subscribe((todos: Todo[]) => this.todos = todos);
   }
-  save(): void {
-    this.todoService
-      .create(this.todo)
-      .subscribe(data => {this.getNewTodo()});
-    this.todo = new Todo();
+
+  add(): void {
+	this.todoService
+		.add(this.todo)
+		.subscribe(todo => this.todos.push(this.todo));
+	window.location.reload();
   }
-//   update(id: number, title: string): void {
-//     let todo = {
-//       id: id,
-//       title: title
-//     }
-//     this.todoService.update(todo);
-//   }
-  getNewTodo(): void {
-    this.todoService
-      .getNewTodo()
-      .subscribe(res => {this.pushData(res)});
-  }
-  pushData(data: Todo): void {
-    this.todos.unshift(data);
-  }
+
   delete(id: number): void {
     this.todoService
       .delete(id)
 	  .subscribe();
+	  window.location.reload();
   }
 }
