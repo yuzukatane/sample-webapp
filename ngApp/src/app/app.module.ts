@@ -6,13 +6,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule }   from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoListComponent }      from './components/todo-list.component';
-import { TodoService } from './services/todo.service';
+import { TodoService } from './main/main.service';
+import { HeaderComponent } from './header/header.component';
+import { MainComponent } from './main/main.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent,
+    HeaderComponent,
+    MainComponent,
   ],
   imports: [
 	BrowserModule,

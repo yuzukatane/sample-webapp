@@ -1,15 +1,16 @@
+
 import { Component,Input } from '@angular/core';
 import { Router}   from '@angular/router';
 
-import { TodoService } from '../services/todo.service';
-import { Todo } from '../models/todo.model';
+import { TodoService } from './main.service';
+import { Todo } from './main.model';
 
 @Component({
-	selector: 'todo-list',
-	templateUrl: '../templates/todo-list.component.html',
-	styleUrls: ['../static/todo-list.component.scss']
-})
-export class TodoListComponent {
+	selector: 'app-main',
+	templateUrl: './main.component.html',
+	styleUrls: ['./main.component.scss']
+  })
+export class MainComponent {
 	todos: Todo[] = [];
 	@Input() todo: Todo = new Todo();
 
